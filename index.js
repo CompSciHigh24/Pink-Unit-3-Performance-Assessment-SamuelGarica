@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 
 // Task 7 : Start the server below. Print 'Server is running.'
 
-app.listen(() => {
+app.listen(3000, () => {
   console.log("Server is running.");
 });
 
