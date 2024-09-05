@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Task 10: Using EJS add the title of your collection here -->
+  <title> <%= title %> </title>
+  <!-- Task 11: Link to styles.css here -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <header class="header">
+      <nav class="navbar">
+          <a href="/">Home</a>
+        <a href="/collection">Songs</a>
+      </nav>
+    <div id="completedTracker">Songs Listened To: 0 / </div>
+  </header>
+
+  <section class="hero">
+    <!-- Task 12: Using EJS add the title of your collection here -->
+      <h1> <%= title %></h1>
+  </section>
+  <canvas id="yourConfettiCanvasId"></canvas>
+
+  <div class="container">
+    <!-- Task 13: Using an EJS for loop, iterate through all your objects and create a card for each. -->
+    <% for(let i = 0; i <items.length; i++){ %>
+        <div class="card">
+          <!-- Task 14: Add image src below -->
+            <img src="<%= items[i].image %>" class="item-image">
+            <div class="card-body">
+              <!-- Task 15: Add name below -->
+                <h2 class="item-name"><%= items[i].name %></h2>
+              <label class="custom-checkbox">
+                Listened To
+              <!-- Task 16: Create a conditional here. If 'checked' is true return the first <input>. Otherwise return the second <input>. Add the index from the for loop as the id of the input.-->
+        <!-- First Input -->
+        <% if(items[i].checked === true){ %>
+          <input type="checkbox" id="..." class="visit-checkbox" checked> 
+        <%}else{%>
+          <input type="checkbox" id="..." class="visit-checkbox">
+        <%}%>
+        <!-- Second Input -->
+              <span class="checkmark"></span>
+              </label>
+              <!-- Task 17: Add the index from the for loop to the end of /collection/ path. -->
+              <a href='/collection/<%= i %>' class="detail-button">Song Lyrics</a>
+            </div>
+        </div>
+    <%}%>
+  </div>
+  <footer class="footer">
+    <!-- Task 18: Add your title to the footer. (RETURN to collectionRoutes.js when done.)-->
+    <p>&copy; <%= title%> </p>
+  </footer>
+  <script src="/script.js" defer></script>
+</body>
+</html>

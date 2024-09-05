@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Task 20: Using EJS add the name to the title-->
+  <title> <%= name %></title> 
+  <!-- Task 21: Link to styles.css here -->
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/collection">Collection</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <!-- Task 22: Using EJS add the name of your item here -->
+    <h1> <%= name %> </h1>
+  </section>
+
+  <div class="detail-container">
+      <!-- Task 23: Add item's image src here -->
+    <iframe width="560" height="315" src="<%= video %> " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <!-- Task 24: Add the rest of details about your item. Add them into p tags-->
+
+      <!-- name -->
+      <p class="herop3" > <%= name %> </p>
+      <!-- type -->
+      <p class="herop2"> <%= album %> </p>
+      <!-- description -->
+      <p class="herop1"> <%= lyrics %> </p>
+
+  </div>
+        <footer class="footer">
+          <!-- Task 25: Add the item name to the footer. (RETURN to collectionRoutes.js when done.) -->
+            <p>&copy; <%= name %></p>
+        </footer>
+  <script src="/script.js" defer></script>
+</body>
+</html>
